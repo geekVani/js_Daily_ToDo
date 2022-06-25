@@ -1,0 +1,816 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="icon" href="https://logowiki.net/uploads/logo/u/university-of-cambridge-2.svg">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style type="text/css">
+        html {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+body {
+    align-items: center;
+}
+
+*:focus {
+    outline: none;
+}
+
+.filter {
+    filter: blur(6px);
+}
+
+.vertical {
+    background-color: #0d49ef;
+    margin-right: 10px;
+    height: 50px;
+    width: 1px;
+}
+
+#navbar {
+    border: none;
+    padding: 10px 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #0d49ef;
+}
+
+#team7 {
+    color: white;
+    margin-right: 3%;
+    margin-top: 0.5%;
+}
+
+.navbarDiv {
+    border-bottom: 199px;
+}
+
+#navbar a img {
+    width: 110px;
+    height: 35px;
+    max-height: 100px;
+    margin-bottom: 10px;
+    margin-top: 3%;
+    border: none;
+}
+
+.input {
+    border: none;
+    margin-bottom: 5px;
+}
+
+.selectDiv {
+    align-self: center;
+    margin-right: 10px;
+}
+
+#inputDiv {
+    width: 75%;
+    border-bottom: 1px solid #0d49ef;
+;
+    float: left;
+    align-self: center;
+    margin-right: 1%;
+}
+
+.input:focus-visible {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.inputHTML {
+    float: left;
+    width: 100%;
+    align-self: center;
+    margin-right: 1%;
+}
+
+.inputHTMLdiv {
+    display: flex;
+}
+
+.button-card {
+    margin-right: 0px;
+}
+
+#submitButton {
+    margin-top: 5px;
+  background-color: #0d49ef;
+    margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#submitButton:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 -25px 18px -14px inset, #0d49ef 0 1px 2px, #0d49ef 0 2px 4px;
+    transform: scale(1.05) rotate(1deg);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+#cars {
+    background-color: white;
+    border: none;
+    width: 100%;
+    height: 40px;
+}
+
+.li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1%;
+    width: 100%;
+    height: 40px;
+    background-color: #ddf8e7;
+    margin: 2px;
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    border-radius: 6px;
+}
+
+.li:hover {
+    background-color: #fef1bd;
+    transform: scale(1.05);
+    border-radius: 16px;
+}
+
+.hour {
+    margin-right: 1%;
+}
+
+#popup {
+    display: none;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    align-self: center;
+    width: 50%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.popupClose {
+    cursor: pointer;
+    color: #0d49ef;
+    align-self: center;
+    margin-right: 8%;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#alert {
+    display: none;
+    margin-bottom: 1%;
+}
+
+.inputRight {
+    display: flex;
+}
+
+#button-table {
+    display: flex;
+    margin-top: 1.5%;
+    display: none;
+}
+
+.button-table-class {
+    margin-left: 1%;
+}
+
+#table {
+    margin-top: 2%;
+}
+
+
+@media only screen and (max-width: 1024) {
+    #team7 {
+        color: white;
+        margin-right: 4%;
+        margin-top: 1%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    #button-table {
+        margin-top: 3%;
+        display: none;
+        margin-bottom: 3%;
+    }
+
+    #team7 {
+        color: white;
+        margin-right: 4%;
+        margin-top: 2%;
+    }
+
+    #popup {
+        display: none;
+        margin-top: 2.5%;
+        margin-bottom: 10%;
+        align-self: center;
+        width: 75%;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+    
+
+    .inputHTMLdiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputHTML {
+        width: 100%;
+        align-self: center;
+    }
+
+    #formLabel {
+        margin-left: 12%;
+    }
+
+    .inputRight {
+        width: fit-content;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        justify-self: center;
+        margin-left: 5px;
+    }
+
+
+    #submitButton {
+        margin-bottom: 10%;
+        width: 200px;
+    }
+
+    .li {
+        font-size: 12px;
+    }
+
+    #todoul {
+        margin-top: -10px;
+        margin-bottom: 15px;
+    }
+
+    #button-table {
+        margin-bottom: 15px;
+    }
+    
+
+    .whatWillDo {
+        margin-left: 4%;
+    }
+
+    .hour {
+        margin-right: 4%;
+    }
+
+    #inputDiv {
+        width: 90%;
+        border-bottom: 1px solid black;
+        float: left;
+        align-self: center;
+        margin-right: 1%;
+    }
+
+    #table {
+        font-size: 12px;
+    }
+    
+}
+
+@media only screen and (max-width: 375px) {
+
+}
+
+
+@media only screen and (max-width: 320px) {
+
+    .inputRight {
+        margin-left: 0px;
+    }
+
+    .li {
+        font-size: 11px;
+    }
+
+    #table {
+        font-size: 10px;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+    <div class="filter-div">
+        <div class="navbarDiv">
+            <nav id="navbar">
+                <div>
+                    <!-- <a href="https://dictionary.cambridge.org">
+                        <img src="https://dictionary.cambridge.org/external/images/logo-lrg.png?version=5.0.186"
+                            alt="Cambridge resmi vardı bulamamış işte .d"> -->
+                    </a>
+                </div>
+                <div id="list"></div>
+            </nav>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container" id="container">
+
+            <div class="filter-div">
+
+                <div class="field inputField">
+
+                    <form action="javascript:void(0);" id="form">
+                        <label class="label" id="formLabel">Enter your tasks...</label>
+                        <div class="control inputHTMLdiv">
+                            <div id="inputDiv">
+                                <input class="input inputHTML" id="inputHTML" type="text" placeholder="Activity">
+                            </div>
+                            
+                            <div class="inputRight">
+                                <div class="select selectDiv">
+                                    <select id="selectStart">
+                                        <option>Start Time</option>
+                                    </select>
+                                </div>
+    
+                                <div class="vertical"></div>
+    
+                                <div class="select selectDiv">
+                                    <select id="selectEnd">
+                                        <option>End Time</option>
+                                    </select>
+                                </div>
+                            
+                            
+
+                            
+                        </div>
+                        <div>
+                            <button class="button is-link button-card" type="submit" id="submitButton">ADD</button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="notification is-danger" id="alert">
+                    <button class="delete" id="delete"></button>
+                    <div id="alertWord">This is not a third unit word</div>
+                </div>
+
+            </div>
+
+            <div id="popup">
+
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title" id="popupBaslık">
+                            Component
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content" id="popupwwd">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                            <br>
+                            <time datetime="2016-1-1" id="popuptime">11:09 PM - 1 Jan 2016</time>
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item" id="popupDelete">Delete</a>
+                        <a href="#" class="card-footer-item" id="popupEdit">Edit</a>
+                        <a href="#" class="card-footer-item" id="popupClose">Close</a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="filter-div">
+                <div id="todolar">
+
+                    <ul id="todoul">
+                        
+                    </ul>
+
+                </div>
+
+                <div id="button-table">
+                    <button class="button is-warning" id="button-create">Create Table</button>
+                    <button class="button is-danger button-table-class" id="button-delete">Delete Table</button>
+                </div>
+
+                <table class="table table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="table">
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+    <script>
+        const selectStart = document.getElementById("selectStart")
+const selectEnd = document.getElementById("selectEnd")
+const form = document.getElementById("form")
+const inputHTML = document.getElementById("inputHTML")
+const inputDiv = document.getElementById("inputDiv")
+const vertical = document.getElementsByClassName("vertical")
+const submitButton = document.getElementById("submitButton")
+const navbar = document.getElementById("navbar")
+const todolar = document.getElementById("todolar")
+const todoul = document.getElementById("todoul")
+const popup = document.getElementById("popup")
+const popupClose = document.getElementById("popupClose")
+const popupDelete = document.getElementById("popupDelete")
+const popupEdit = document.getElementById("popupEdit")
+const popupBaslık = document.getElementById("popupBaslık")
+const popupwwd = document.getElementById("popupwwd")
+const popuptime = document.getElementById("popuptime")
+const errorDelete = document.getElementById("delete")
+const alert = document.getElementById("alert")
+const alertWord = document.getElementById("alertWord")
+const filter = document.getElementsByClassName("filter-div")
+const buttonTable = document.getElementById("button-table")
+const buttonCreate = document.getElementById("button-create")
+const buttonDelete = document.getElementById("button-delete")
+const table = document.getElementById("table")
+let liWWD = []
+let liStartTime = []
+let liEndTime = []
+let unique = true;
+
+let whatWillDoEdit;
+let hour;
+
+function dropdown(dropdown) {
+    for (let hour1 = 1; hour1 < 3; hour1++) {
+        if (hour1 == 2) {
+            for (let hour2 = 0; hour2 < 5; hour2++) {
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:00`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+                if (`${hour1}${hour2}` == "24") {
+                    continue;
+                }
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:15`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:30`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:45`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+            }
+        } else {
+            for (let hour2 = 5; hour2 < 10; hour2++) {
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:00`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:15`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:30`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+                var option = document.createElement("option");
+                var textnode = document.createTextNode(`${hour1}${hour2}:45`);
+                option.appendChild(textnode);
+                dropdown.appendChild(option);
+
+            }
+        }
+    }
+}
+
+dropdown(selectStart)
+dropdown(selectEnd)
+
+function pro() {
+    /*console.log(selectStart.value);
+    console.log(selectEnd.value);
+    console.log(inputHTML.value);*/
+
+    const whatWillDo = document.getElementsByClassName("whatWillDo")
+
+
+    if (todoul.childElementCount >= 1) {
+        //console.log("a");
+        for (let i = 0; i < todoul.childElementCount; i++) {
+            //console.log("ab");
+            if (whatWillDo[i].textContent == inputHTML.value) {
+                //console.log("abc");
+                unique = false
+            }
+        }
+    }
+
+    if (inputHTML.value == "") {
+        alertWord.textContent = "Please enter an activity"
+        alert.style.display = "block"
+    } else if (selectStart.value == "Start Time" || selectEnd.value == "End Time") {
+        alertWord.textContent = "Please enter your time interval correctly"
+        alert.style.display = "block"
+    } else if (unique == false) {
+        alertWord.textContent = "This activity is already entered"
+        alert.style.display = "block"
+    } else {
+        buttonTable.style.display = "block"
+        //console.log(selectStart.value);
+        alert.style.display = "none"
+        const li = document.createElement("li");
+        const divLi = document.createElement("div");
+        const divWWD = document.createElement("div");
+        const divHour = document.createElement("div");
+        divLi.classList.add("li");
+        divWWD.classList.add("whatWillDo");
+        divHour.classList.add("hour");
+        divWWD.textContent = inputHTML.value
+        divHour.textContent = `${selectStart.value} PM - ${selectEnd.value} PM`
+        divLi.appendChild(divWWD)
+        divLi.appendChild(divHour)
+        li.appendChild(divLi);
+
+        if (todoul.childElementCount >= 1) {
+            const hour = document.getElementsByClassName("hour")
+            console.log(todoul.childElementCount);
+            for (let i = 0; i < todoul.childElementCount; i++) {
+                console.log(i);
+                const start_time_li = `${hour[i].textContent[0]}${hour[i].textContent[1]}.${hour[i].textContent[3]}${hour[i].textContent[4]}`
+                const start_time_new = `${selectStart.value[0]}${selectStart.value[1]}.${selectStart.value[3]}${selectStart.value[4]}`
+                if (Number(start_time_new) < Number(start_time_li)) {
+                    console.log(liWWD);
+                    todoul.insertBefore(li, todoul.childNodes[i+1])
+                    if (i != 0) {
+                        liWWD.splice(i, 0, inputHTML.value);
+                        liStartTime.splice(i, 0, selectStart.value);
+                        liEndTime.splice(i, 0, selectEnd.value);
+                    } else {
+                        liWWD.splice(0, 0, inputHTML.value);
+                        liStartTime.splice(0, 0, selectStart.value);
+                        liEndTime.splice(0, 0, selectEnd.value);
+                    }
+
+                    console.log(liWWD);
+                    //liWWD.push(inputHTML.value)
+
+                    localStorage.setItem("liWWD", liWWD);
+                    localStorage.setItem("liStartTime", liStartTime);
+                    localStorage.setItem("liEndTime", liEndTime);
+                    inputHTML.value = ""
+                    selectStart.value = "Start Time"
+                    selectEnd.value = "End Time"
+                    return;
+                } else {
+                    todoul.appendChild(li)
+                }
+            }
+        } else {
+            todoul.appendChild(li)
+        }
+        liWWD.push(inputHTML.value)
+        liStartTime.push(selectStart.value)
+        liEndTime.push(selectEnd.value)
+        localStorage.setItem("liWWD", liWWD);
+        localStorage.setItem("liStartTime", liStartTime);
+        localStorage.setItem("liEndTime", liEndTime);
+        inputHTML.value = ""
+        selectStart.value = "Start Time"
+        selectEnd.value = "End Time"
+    }
+}
+
+form.addEventListener("submit", pro);
+
+function show(e) {
+    li = e.target
+    if (e.target.classList.value == "li") {
+        //console.log(e.target);
+        filter[0].classList.add("filter");
+        filter[1].classList.add("filter");
+        filter[2].classList.add("filter");
+        popup.style.display = "block"
+        popupBaslık.textContent = li.childNodes[1].textContent
+        popupwwd.textContent = li.childNodes[0].textContent
+    }
+}
+
+function close(e) {
+    filter[0].classList.remove("filter");
+    filter[1].classList.remove("filter");
+    filter[2].classList.remove("filter");
+    popup.style.display = "none"
+}
+
+function edit(e) {
+    const whatWillDo = document.getElementsByClassName("whatWillDo")
+    popup.style.display = "none"
+    filter[0].classList.remove("filter");
+    filter[1].classList.remove("filter");
+    filter[2].classList.remove("filter");
+    inputHTML.value = popupwwd.textContent.trim()
+    //console.log(popupBaslık.textContent[10]);
+    selectStart.value = `${popupBaslık.textContent[0]}${popupBaslık.textContent[1]}${popupBaslık.textContent[2]}${popupBaslık.textContent[3]}${popupBaslık.textContent[4]}`
+    selectEnd.value = `${popupBaslık.textContent[11]}${popupBaslık.textContent[12]}${popupBaslık.textContent[13]}${popupBaslık.textContent[14]}${popupBaslık.textContent[15]}`
+    if (todoul.childElementCount == 1) {
+        todoul.childNodes[0].remove()
+    }
+    for (let i = 0; i < todoul.childElementCount; i++) {
+        if (whatWillDo[i].textContent == popupwwd.textContent) {
+            todoul.childNodes[i].remove()
+            //console.log("a");
+            liWWD.splice(i, 1);
+            liStartTime.splice(i, 1)
+            liEndTime.splice(i, 1)
+            localStorage.setItem("liWWD", liWWD);
+            localStorage.setItem("liStartTime", liStartTime);
+            localStorage.setItem("liEndTime", liEndTime);
+        }
+    }
+
+    if (todoul.childNodes.length == 0) {
+        buttonTable.style.display = "none"
+    }
+}
+
+function deleteli(e) {
+    const whatWillDo = document.getElementsByClassName("whatWillDo")
+    filter[0].classList.remove("filter");
+    filter[1].classList.remove("filter");
+    filter[2].classList.remove("filter");
+    popup.style.display = "none"
+
+    if (todoul.childElementCount == 1) {
+        todoul.childNodes[0].remove()
+    }
+
+    for (let i = 0; i < todoul.childElementCount; i++) {
+        if (whatWillDo[i].textContent == popupwwd.textContent) {
+            if (todoul.childElementCount == 1) {
+                todoul.firstChild.remove()
+            } else(
+                todoul.childNodes[i + 1].remove()
+            )
+
+            liWWD.splice(i, 1);
+            liStartTime.splice(i, 1)
+            liEndTime.splice(i, 1)
+            localStorage.setItem("liWWD", liWWD);
+            localStorage.setItem("liStartTime", liStartTime);
+            localStorage.setItem("liEndTime", liEndTime);
+
+        }
+    }
+
+    if (todoul.childNodes.length == 0) {
+        buttonTable.style.display = "none"
+    }
+
+}
+
+function createTable(e) {
+    const hour = document.getElementsByClassName("hour")
+    const whatWillDo = document.getElementsByClassName("whatWillDo")
+
+    table.innerHTML = `
+    <thead>
+    <tr id="trawhead">
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="trawbody">
+
+    </tr>
+    </tbody>
+    `
+
+    for (let i = 0; i < todoul.childElementCount; i++) {
+        const trawhead = document.getElementById("trawhead")
+        const th = document.createElement("th");
+        th.textContent = `${hour[i].textContent[0]}${hour[i].textContent[1]}${hour[i].textContent[2]}${hour[i].textContent[3]}${hour[i].textContent[4]} - ${hour[i].textContent[11]}${hour[i].textContent[12]}${hour[i].textContent[13]}${hour[i].textContent[14]}${hour[i].textContent[15]} `
+        trawhead.appendChild(th)
+        const trawbody = document.getElementById("trawbody")
+        const td = document.createElement("td");
+        td.textContent = `${whatWillDo[i].textContent}`
+        trawbody.appendChild(td)
+    }
+}
+
+function deleteTable(e) {
+    if (table.innerHTML == ``) {
+        alertWord.textContent = "You have to create a table first"
+        alert.style.display = "block"
+    }
+    table.innerHTML = ``
+}
+
+todoul.addEventListener("click", show);
+popupClose.addEventListener("click", close)
+popupEdit.addEventListener("click", edit)
+popupDelete.addEventListener("click", deleteli)
+buttonDelete.addEventListener("click", deleteTable)
+buttonCreate.addEventListener("click", createTable)
+
+inputHTML.addEventListener("focus", () => {
+    vertical[0].style.backgroundColor = "#ffc833"
+    inputDiv.style.borderBottom = "1px solid #ffc833"
+    submitButton.style.backgroundColor = "#ffc833"
+});
+
+inputHTML.addEventListener("focusout", () => {
+    vertical[0].style.backgroundColor = "#00925c"
+    inputDiv.style.borderBottom = "2px solid #00925c"
+    submitButton.style.backgroundColor = "#00925c"
+});
+
+errorDelete.addEventListener('click', function (event) {
+    alert.style.display = "none"
+});
+
+window.addEventListener('load', (event) => {
+
+    if (localStorage.getItem("liWWD") != null) {
+        liWWD = localStorage.getItem("liWWD").split(',')
+    }
+    if (localStorage.getItem("liStartTime") != null) {
+        liStartTime = localStorage.getItem("liStartTime").split(',')
+    }
+    if (localStorage.getItem("liEndTime") != null) {
+        liEndTime = localStorage.getItem("liEndTime").split(',')
+    }
+
+    if (liWWD[0] == "") {
+        liWWD.splice(0, 1);
+        liStartTime.splice(0, 1)
+        liEndTime.splice(0, 1)
+        localStorage.setItem("liWWD", liWWD);
+        localStorage.setItem("liStartTime", liStartTime);
+        localStorage.setItem("liEndTime", liEndTime);
+    }
+
+    //console.log(liWWD.length);
+    for (let i = 0; i < liWWD.length; i++) {
+        buttonTable.style.display = "block"
+        const li = document.createElement("li");
+        const divLi = document.createElement("div");
+        const divWWD = document.createElement("div");
+        const divHour = document.createElement("div");
+        divLi.classList.add("li");
+        divWWD.classList.add("whatWillDo");
+        divHour.classList.add("hour");
+        divWWD.textContent = liWWD[i]
+        divHour.textContent = `${liStartTime[i]} PM - ${liEndTime[i]} PM`
+        divLi.appendChild(divWWD)
+        divLi.appendChild(divHour)
+        li.appendChild(divLi);
+        todoul.appendChild(li)
+    }
+
+});
+    </script>
+</body>
+
+</html>
